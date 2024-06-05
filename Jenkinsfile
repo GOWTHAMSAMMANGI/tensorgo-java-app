@@ -34,12 +34,12 @@ pipeline{
         }
         stage("TRIVY"){
             steps{
-                sh trivy image registry + ":v$BUILD_NUMBER" > trivy.txt
+                sh "trivy image $registry + ":v$BUILD_NUMBER" > trivy.txt"
             }
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name fs-app -p 80:8070 registry + ":v$BUILD_NUMBER"'
+                sh "docker run -d --name fs-app -p 80:8070 $registry + ":v$BUILD_NUMBER""
             }
         }
     }

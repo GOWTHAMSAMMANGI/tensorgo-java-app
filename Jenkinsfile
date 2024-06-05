@@ -10,11 +10,6 @@ pipeline{
                 cleanWs()
             }
         }
-        stage('Checkout from Git'){
-            steps{
-                git branch: 'main', url: 'https://github.com/GOWTHAMSAMMANGI/tensorgo-java-app.git'
-            }
-        }
         stage('Build docker image') {
             steps {
                 script {

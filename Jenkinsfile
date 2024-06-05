@@ -34,7 +34,7 @@ pipeline{
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image registry + ":v$BUILD_NUMBER" > trivy.txt" 
+                sh trivy image registry + ":v$BUILD_NUMBER" > trivy.txt
             }
         }
         stage('Deploy to container'){

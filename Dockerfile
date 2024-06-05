@@ -11,7 +11,6 @@ COPY src /opt/shipping/src/
 
 RUN mvn package -DskipTests=true
 
-
 # Run
 FROM openjdk:8u151-jre-alpine3.7
 

@@ -12,7 +12,7 @@ pipeline{
         }
         stage('Build docker image') {
             steps {
-                sh "docker buildx -t $registry:v$BUILD_NUMBER ."
+                sh "docker build -t image ."
             }
         }
         stage('Upload Image'){

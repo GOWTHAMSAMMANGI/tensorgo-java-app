@@ -40,7 +40,7 @@ pipeline{
         stage('Deploy to container'){
             steps{
                 // sh "docker run -d --name fs-app-$BUILD_NUMBER -p 80:8070 $registry:v$BUILD_NUMBER"
-                sh "docker-compose up -d"
+                sh "docker-compose down"
             }
         }
     }

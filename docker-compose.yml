@@ -46,7 +46,7 @@ services:
       - monitoring
 
   java-app:
-    build: .
+    image: gowthamsammangi/tensorgojava-app:latest
     container_name: java-app
     ports:
       - "80:8070"
